@@ -1,0 +1,190 @@
+/* ==========================================
+   Hero Styles & Color Variables
+   ========================================== */
+
+:root {
+  --color-coffee: #6F4E37;
+  --color-amber: #C58940;
+  --color-amber-hover: #b07936;
+  --color-cream: #FFF8F2;
+  --transition-smooth: all 0.3s ease-in-out;
+}
+
+/* Full-Screen Hero Section */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 650px;
+  background-image: url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=1920');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 1.5rem;
+}
+
+/* Dark Gradient Overlay for Readability */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg, 
+    rgba(44, 34, 30, 0.85) 0%, 
+    rgba(30, 22, 19, 0.75) 100%
+  );
+  z-index: 1;
+}
+
+/* Hero Content Styling & Fade-In Animation */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+  animation: heroFadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Subtitle */
+.hero-subtitle {
+  display: inline-block;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--color-amber);
+  margin-bottom: 1rem;
+}
+
+/* Main Heading */
+.hero-title {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 800;
+  color: var(--color-cream);
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
+}
+
+/* Description Text */
+.hero-description {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: #E2D7CE;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto 2.5rem auto;
+}
+
+/* Buttons Container */
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Base Button Styles */
+.btn {
+  display: inline-block;
+  padding: 0.9rem 2.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+  cursor: pointer;
+}
+
+/* Primary Button (Filled Amber) */
+.btn-primary {
+  background-color: var(--color-amber);
+  color: #FFFFFF;
+  box-shadow: 0 4px 15px rgba(197, 137, 64, 0.3);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-amber-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(197, 137, 64, 0.4);
+}
+
+/* Secondary Button (Transparent with Cream Border) */
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-cream);
+  border: 2px solid var(--color-cream);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-cream);
+  color: var(--color-coffee);
+  transform: translateY(-2px);
+}
+
+/* Bouncing Scroll-Down Indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  color: var(--color-cream);
+  font-size: 2rem;
+  animation: bounce 2s infinite;
+  transition: var(--transition-smooth);
+}
+
+.scroll-indicator:hover {
+  color: var(--color-amber);
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  40% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+  60% {
+    transform: translateX(-50%) translateY(-5px);
+  }
+}
+
+/* ==========================================
+   Responsive Breakpoints
+   ========================================== */
+
+@media screen and (max-width: 768px) {
+  .hero-section {
+    padding: 0 1rem;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}

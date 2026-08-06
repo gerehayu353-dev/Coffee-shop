@@ -1,0 +1,151 @@
+/* ==========================================
+   Navbar Styles & Color Variables
+   ========================================== */
+
+:root {
+  --color-coffee: #6F4E37;
+  --color-amber: #C58940;
+  --color-cream: #FFF8F2;
+  --color-dark: #2C221E;
+  --transition-smooth: all 0.3s ease-in-out;
+}
+
+/* Enable global smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Sticky Navbar Base Styling (Transparent initially) */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent;
+  transition: var(--transition-smooth);
+  z-index: 1000;
+  padding: 1.2rem 2rem;
+}
+
+/* Navbar Style when scrolled (White background with subtle shadow) */
+.navbar-scrolled {
+  background-color: #FFFFFF;
+  box-shadow: 0 4px 20px rgba(111, 78, 55, 0.08);
+  padding: 0.8rem 2rem;
+}
+
+/* Container */
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo Styling */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-coffee);
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+.logo-icon {
+  font-size: 1.8rem;
+  color: var(--color-amber);
+}
+
+.navbar-logo:hover {
+  color: var(--color-amber);
+}
+
+/* Navigation Links List */
+.navbar-links {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+/* Links Styling with Hover Animation */
+.navbar-links a {
+  text-decoration: none;
+  color: var(--color-dark);
+  font-weight: 500;
+  font-size: 1rem;
+  position: relative;
+  transition: var(--transition-smooth);
+}
+
+.navbar-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--color-amber);
+  transition: var(--transition-smooth);
+}
+
+.navbar-links a:hover {
+  color: var(--color-amber);
+}
+
+.navbar-links a:hover::after {
+  width: 100%;
+}
+
+/* Hamburger Toggle Button (Hidden on Desktop) */
+.navbar-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: var(--color-coffee);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+/* ==========================================
+   Responsive Design (Mobile Devices)
+   ========================================== */
+
+@media screen and (max-width: 768px) {
+  .navbar-toggle {
+    display: block;
+  }
+
+  .navbar-menu {
+    position: fixed;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-cream);
+    box-shadow: 0 10px 20px rgba(111, 78, 55, 0.05);
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.4s ease-in-out;
+  }
+
+  .navbar-menu.active {
+    max-height: 350px;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem 0;
+  }
+
+  .navbar-links a {
+    font-size: 1.1rem;
+  }
+}

@@ -1,0 +1,241 @@
+/* ==========================================
+   Footer Styles & Color Variables
+   ========================================== */
+
+:root {
+  --color-footer-bg: #1A1311;
+  --color-footer-card: #241A17;
+  --color-amber-gold: #C58940;
+  --color-amber-hover: #e09f51;
+  --color-cream-text: #FFF8F2;
+  --color-muted-text: #C4B5AE;
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Main Footer Wrapper */
+.footer {
+  background-color: var(--color-footer-bg);
+  color: var(--color-cream-text);
+  padding: 5rem 2rem 2rem 2rem;
+  font-family: inherit;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Footer Grid Layout */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1.2fr 1fr;
+  gap: 3rem;
+  padding-bottom: 3.5rem;
+  border-bottom: 1px solid rgba(196, 181, 174, 0.15);
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Brand Column */
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-cream-text);
+  text-decoration: none;
+  margin-bottom: 1rem;
+  transition: var(--transition-smooth);
+}
+
+.footer-logo:hover {
+  color: var(--color-amber-gold);
+}
+
+.footer-logo-icon {
+  font-size: 1.8rem;
+  color: var(--color-amber-gold);
+}
+
+.footer-description {
+  font-size: 0.95rem;
+  color: var(--color-muted-text);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* Social Media Icons */
+.footer-socials {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-footer-card);
+  color: var(--color-cream-text);
+  border-radius: 50%;
+  font-size: 1.1rem;
+  transition: var(--transition-smooth);
+}
+
+.footer-socials a:hover {
+  background-color: var(--color-amber-gold);
+  color: var(--color-footer-bg);
+  transform: translateY(-3px);
+}
+
+/* Headings */
+.footer-heading {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--color-cream-text);
+  margin-bottom: 1.25rem;
+  letter-spacing: 0.5px;
+  position: relative;
+}
+
+.footer-heading::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 30px;
+  height: 2px;
+  background-color: var(--color-amber-gold);
+}
+
+/* Quick Navigation Links */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-links a {
+  color: var(--color-muted-text);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: var(--transition-smooth);
+}
+
+.footer-links a:hover {
+  color: var(--color-amber-gold);
+  padding-left: 5px;
+}
+
+/* Contact List */
+.footer-contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer-contact-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  color: var(--color-muted-text);
+  line-height: 1.4;
+}
+
+.footer-contact-icon {
+  color: var(--color-amber-gold);
+  font-size: 1.1rem;
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+}
+
+/* Hours Column Details */
+.footer-hours {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  font-size: 0.95rem;
+  color: var(--color-muted-text);
+}
+
+.footer-hours strong {
+  color: var(--color-cream-text);
+}
+
+.footer-status {
+  display: inline-block;
+  background-color: rgba(46, 125, 50, 0.2);
+  color: #81C784;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  width: fit-content;
+  margin-top: 0.5rem;
+}
+
+/* Copyright & Bottom Sub-Bar */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+  font-size: 0.9rem;
+  color: var(--color-muted-text);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-bottom-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-bottom-links a {
+  color: var(--color-muted-text);
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+.footer-bottom-links a:hover {
+  color: var(--color-amber-gold);
+}
+
+/* ==========================================
+   Responsive Breakpoints
+   ========================================== */
+
+@media screen and (max-width: 968px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .footer {
+    padding: 4rem 1rem 1.5rem 1rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}
